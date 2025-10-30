@@ -61,6 +61,12 @@ Always structure analysis as:
 3. Detailed Analysis (with supporting data)
 4. Limitations and Caveats
 5. Recommendations (if applicable)
+
+## Scope
+- Financial data analysis only
+- Historical and current data (not speculation)
+- Quantitative analysis preferred
+- Escalate to human analyst for strategic decisions
 ```
 
 ## Example 3: Few-Shot Prompt for Classification
@@ -142,34 +148,38 @@ Scenario: [YOUR SCENARIO HERE]
       <body>2-3 paragraphs highlighting key benefits</body>
       <cta>Clear call-to-action</cta>
     </format>
+    
+    <examples>
+      <example>
+        <product>Project management tool</product>
+        <copy>
+          Headline: "Cut Project Delays by 40%"
+          Body: "Teams waste 8 hours weekly on status updates. Our tool automates coordination..."
+        </copy>
+      </example>
+    </examples>
   </instructions>
 </prompt>
 ```
 
-## Example 6: Testing Framework for Prompts
+## Example 6: Prompt for Iterative Refinement
 
 ```
-# Prompt Evaluation Framework
+I'm working on a prompt for [TASK]. Here's my current version:
 
-## Test Case 1: Happy Path
-Input: [Standard, well-formed input]
-Expected Output: [Specific, detailed output]
-Success Criteria: [Measurable criteria]
+[CURRENT PROMPT]
 
-## Test Case 2: Edge Case - Ambiguous Input
-Input: [Ambiguous or unclear input]
-Expected Output: [Request for clarification]
-Success Criteria: [Asks clarifying questions]
+I've noticed these issues:
+- [ISSUE 1]
+- [ISSUE 2]
+- [ISSUE 3]
 
-## Test Case 3: Edge Case - Complex Scenario
-Input: [Complex, multi-faceted input]
-Expected Output: [Structured, comprehensive analysis]
-Success Criteria: [Addresses all aspects]
-
-## Test Case 4: Error Handling
-Input: [Invalid or malformed input]
-Expected Output: [Clear error message with guidance]
-Success Criteria: [Helpful, actionable error message]
+As a prompt engineering expert, please:
+1. Identify any additional issues I missed
+2. Suggest specific improvements with reasoning
+3. Provide a refined version of the prompt
+4. Explain what changed and why
+5. Suggest test cases to validate the improvements
 ```
 
 ## Example 7: Anti-Pattern Recognition
@@ -201,7 +211,73 @@ Format as a structured report with:
 Focus on insights that could improve Q4 revenue."
 ```
 
-## Example 8: Prompt Optimization Checklist
+## Example 8: Testing Framework for Prompts
+
+```
+# Prompt Evaluation Framework
+
+## Test Case 1: Happy Path
+Input: [Standard, well-formed input]
+Expected Output: [Specific, detailed output]
+Success Criteria: [Measurable criteria]
+
+## Test Case 2: Edge Case - Ambiguous Input
+Input: [Ambiguous or unclear input]
+Expected Output: [Request for clarification]
+Success Criteria: [Asks clarifying questions]
+
+## Test Case 3: Edge Case - Complex Scenario
+Input: [Complex, multi-faceted input]
+Expected Output: [Structured, comprehensive analysis]
+Success Criteria: [Addresses all aspects]
+
+## Test Case 4: Error Handling
+Input: [Invalid or malformed input]
+Expected Output: [Clear error message with guidance]
+Success Criteria: [Helpful, actionable error message]
+
+## Regression Test
+Input: [Previous failing case]
+Expected Output: [Now handles correctly]
+Success Criteria: [Issue is resolved]
+```
+
+## Example 9: Skill Metadata Template
+
+```yaml
+---
+name: analyzing-financial-statements
+description: Expert guidance on analyzing financial statements, identifying trends, and extracting actionable insights for business decision-making
+---
+
+# Financial Statement Analysis Skill
+
+## Overview
+This skill provides expert guidance on analyzing financial statements...
+
+## Key Capabilities
+- Balance sheet analysis
+- Income statement interpretation
+- Cash flow analysis
+- Ratio analysis and benchmarking
+- Trend identification
+- Risk assessment
+
+## Use Cases
+- Evaluating company financial health
+- Comparing competitors
+- Identifying investment opportunities
+- Assessing business performance
+- Forecasting financial trends
+
+## Limitations
+- Historical data only (not predictive)
+- Requires accurate financial data
+- Industry context important
+- Professional judgment recommended
+```
+
+## Example 10: Prompt Optimization Checklist
 
 ```
 # Prompt Optimization Checklist

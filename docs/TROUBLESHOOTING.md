@@ -24,6 +24,16 @@
 5. Use role-based prompting for consistency
 ```
 
+**Example Fix:**
+```
+❌ Before: "Summarize this article"
+
+✅ After: "Summarize this article in exactly 3 bullet points, 
+each 1-2 sentences. Focus on key findings and implications."
+```
+
+---
+
 ### Issue 2: Hallucinations or False Information
 
 **Symptoms:**
@@ -45,6 +55,17 @@
 4. Provide factual context
 5. Ask "What don't you know?"
 ```
+
+**Example Fix:**
+```
+❌ Before: "What will happen to the market next year?"
+
+✅ After: "Based on current market data, what are 3 possible 
+scenarios for next year? For each, explain your reasoning and 
+note your confidence level (high/medium/low)."
+```
+
+---
 
 ### Issue 3: Vague or Unhelpful Responses
 
@@ -69,6 +90,18 @@
 5. Define success criteria
 ```
 
+**Example Fix:**
+```
+❌ Before: "How can I improve my business?"
+
+✅ After: "I run a SaaS company with $2M ARR. We're losing 
+customers to competitors. What are 3 specific strategies to 
+improve retention? For each, explain implementation steps and 
+expected impact."
+```
+
+---
+
 ### Issue 4: Too Long or Too Short Responses
 
 **Symptoms:**
@@ -91,6 +124,17 @@
 4. Provide examples
 5. Request specific detail level
 ```
+
+**Example Fix:**
+```
+❌ Before: "Explain machine learning"
+
+✅ After: "Explain machine learning in 2-3 paragraphs for 
+someone with no technical background. Focus on practical 
+applications, not theory."
+```
+
+---
 
 ### Issue 5: Wrong Output Format
 
@@ -115,6 +159,20 @@
 5. Show before/after examples
 ```
 
+**Example Fix:**
+```
+❌ Before: "List the top 5 products"
+
+✅ After: "List the top 5 products in JSON format:
+{
+  \"products\": [
+    {\"name\": \"...\", \"revenue\": \"...\", \"growth\": \"...\"}
+  ]
+}"
+```
+
+---
+
 ### Issue 6: Claude Refuses to Respond
 
 **Symptoms:**
@@ -137,6 +195,17 @@
 4. Explain why you need this
 5. Ask for general guidance instead
 ```
+
+**Example Fix:**
+```
+❌ Before: "How do I manipulate people?"
+
+✅ After: "I'm writing a novel with a manipulative character. 
+How would a psychologist describe manipulation tactics? 
+What are the psychological mechanisms involved?"
+```
+
+---
 
 ### Issue 7: Prompt is Too Long
 
@@ -161,6 +230,16 @@
 5. Use progressive disclosure
 ```
 
+**Example Fix:**
+```
+❌ Before: [5000 word prompt with full documentation]
+
+✅ After: [500 word prompt with links to detailed docs]
+"See REFERENCE.md for detailed specifications"
+```
+
+---
+
 ### Issue 8: Prompt Doesn't Generalize
 
 **Symptoms:**
@@ -183,6 +262,17 @@
 4. Test with diverse inputs
 5. Build in flexibility
 ```
+
+**Example Fix:**
+```
+❌ Before: "Analyze this Q3 sales data..."
+
+✅ After: "Analyze this [PERIOD] [METRIC] data. 
+Handle various formats: CSV, JSON, or table.
+If format is unclear, ask for clarification."
+```
+
+---
 
 ## Debugging Workflow
 
@@ -215,6 +305,8 @@
 - Is it efficient?
 - Is it maintainable?
 
+---
+
 ## Quick Reference: Common Fixes
 
 | Problem | Quick Fix |
@@ -227,6 +319,8 @@
 | Refuses | Clarify legitimate purpose |
 | Too long prompt | Remove unnecessary context |
 | Doesn't generalize | Use variables + handle variations |
+
+---
 
 ## Testing Checklist
 

@@ -98,6 +98,33 @@ Break complex tasks into sequential prompts:
 - **Use cases**: Mention primary applications
 - **Avoid vagueness**: Don't use "helps with" or "assists in"
 
+### Progressive Disclosure Patterns
+
+**Pattern 1: High-level guide with references**
+- Start with overview
+- Link to detailed sections
+- Organize by complexity
+
+**Pattern 2: Domain-specific organization**
+- Group by use case
+- Separate concerns
+- Clear navigation
+
+**Pattern 3: Conditional details**
+- Show details based on context
+- Provide examples for each path
+- Avoid overwhelming options
+
+### File Structure
+```
+skill-name/
+├── SKILL.md (required metadata)
+├── CLAUDE.md (main instructions)
+├── reference-guide.md (detailed info)
+├── examples.md (use cases)
+└── troubleshooting.md (common issues)
+```
+
 ## Evaluation & Testing
 
 ### Success Criteria Definition
@@ -112,6 +139,11 @@ Break complex tasks into sequential prompts:
 - **Error cases**: Invalid inputs
 - **Stress tests**: Complex scenarios
 
+### Failure Analysis
+- **Why did it fail?**: Root cause analysis
+- **Pattern recognition**: Identify systematic issues
+- **Refinement**: Adjust prompt accordingly
+
 ## Anti-Patterns to Avoid
 
 ### Common Mistakes
@@ -121,6 +153,100 @@ Break complex tasks into sequential prompts:
 - **Hallucination risks**: Prompts that encourage false information
 - **Context leakage**: Unintended information exposure
 - **Jailbreak vulnerabilities**: Prompts susceptible to manipulation
+
+### Windows-Style Paths
+- ❌ Use: `C:\Users\Documents\file.txt`
+- ✅ Use: `/Users/Documents/file.txt` or `~/Documents/file.txt`
+
+### Too Many Options
+- Avoid offering 10+ choices
+- Limit to 3-5 clear alternatives
+- Use progressive disclosure for complex options
+
+## Workflows and Feedback Loops
+
+### Use Workflows for Complex Tasks
+- Break into logical steps
+- Define inputs/outputs for each step
+- Implement feedback mechanisms
+- Allow for iteration
+
+### Implement Feedback Loops
+- Request clarification when needed
+- Validate intermediate results
+- Adjust based on feedback
+- Confirm understanding
+
+## Content Guidelines
+
+### Avoid Time-Sensitive Information
+- Don't hardcode dates
+- Use relative references ("current year")
+- Provide update mechanisms
+- Document when information was current
+
+### Use Consistent Terminology
+- Define key terms once
+- Use consistently throughout
+- Avoid synonyms for same concept
+- Create glossary for complex domains
+
+## Multimodal & Advanced Prompting
+
+### Vision Prompting
+- Describe what Claude should analyze
+- Specify output format
+- Provide context about images
+- Ask for specific details
+
+### File-Based Prompting
+- Specify file types accepted
+- Describe expected structure
+- Provide parsing instructions
+- Handle errors gracefully
+
+### Extended Thinking
+- Use for complex reasoning
+- Allow more processing time
+- Request detailed explanations
+- Leverage for novel problems
+
+## Skill Development Workflow
+
+### Build Evaluations First
+1. Define success criteria
+2. Create test cases
+3. Establish baseline
+4. Measure improvements
+
+### Develop Iteratively with Claude
+1. Start with simple version
+2. Test and gather feedback
+3. Refine based on results
+4. Repeat until satisfied
+
+### Observe How Claude Navigates Skills
+- Watch how Claude discovers content
+- Note which sections are used
+- Identify confusing areas
+- Optimize based on usage patterns
+
+## YAML Frontmatter Requirements
+
+```yaml
+---
+name: skill-name
+description: Clear, concise description (max 1024 chars)
+---
+```
+
+## Token Budget Considerations
+
+- **Skill metadata**: ~100-200 tokens
+- **Main instructions**: ~500-1000 tokens
+- **Reference files**: ~1000-5000 tokens each
+- **Examples**: ~500-1000 tokens each
+- **Total budget**: Varies by use case
 
 ## Checklist for Effective Skills
 
